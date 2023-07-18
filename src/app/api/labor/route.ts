@@ -30,8 +30,8 @@ export async function GET(request: Request) {
     }
 
     if (checkSignature()) {
-        return NextResponse.json(echostr)
+        return new Response(echostr)
     } else {
-        return NextResponse.json("signature failed!")
+        return new Response(echostr)
     }
 }
